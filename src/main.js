@@ -1,3 +1,5 @@
+const FILMS_COUNT = 5;
+
 // Звание пользователя;
 const createProfile = () => {
   return (
@@ -35,11 +37,23 @@ const createSort = () => {
 };
 
 // Контейнер для карточек фильмов;
-const createFilmCardsContainer = () => {
+const createFilmsContainer = () => {
   return (
-  `<div class="films-list__container"></div>`
+    `<section class="films">
+      <section class="films-list">
+        <h2 class="films-list__title visually-hidden">All movies. Upcoming</h2>
+        <div class="films-list__container"></div>
+      </section>
+    </section>`
   );
 };
+
+// // Контейнер для карточек фильмов;
+// const createFilmCardsContainer = () => {
+//   return (
+//   `<div class="films-list__container"></div>`
+//   );
+// };
 
 
 // Карточка фильма;
@@ -78,7 +92,19 @@ const createTopFilmsContainer = () => {
   `<section class="films-list--extra">
     <h2 class="films-list__title">Top rated</h2>
     <div class="films-list__container"></div>
+  </section>
+  <section class="films-list--extra">
+    <h2 class="films-list__title">Most commented</h2>
+    <div class="films-list__container"></div>
   </section>`
+  );
+};
+
+//
+
+const createFilmsCount = () => {
+  return (
+    `<p>130 291 movies inside</p>`
   );
 };
 
@@ -205,3 +231,35 @@ const createFilmDetails = () => {
   </section>`
   );
 };
+
+// Функция для рендеринга (вставки в DOM) компонентов;
+const renderTemplate = (container, template, place = `beforeend`) => {
+  container.insertAdjacentHTML(place, template);
+};
+
+const headerElement = document.querySelector(`.header`);
+const mainElement = document.querySelector(`.main`);
+renderTemplate(headerElement, createProfile());
+renderTemplate(mainElement, createMenu());
+renderTemplate(mainElement, createSort());
+renderTemplate(mainElement, createFilmsContainer());
+
+const containerElement = mainElement.querySelector(`.films`);
+const filmsListElement = mainElement.querySelector(`.films-list`);
+const filmsContainerElement = mainElement.querySelector(`.films-list__container`);
+
+for (let i = 0; i < FILMS_COUNT; i++) {
+  renderTemplate(filmsContainerElement, createFilmCard());
+}
+
+renderTemplate(filmsListElement, createShowMoreButton());
+renderTemplate(containerElement, createTopFilmsContainer());
+
+const topFilmsElements = mainElement.querySelectorAll(`.films-list__container`);
+renderTemplate(topFilmsElements[1], createFilmCard());
+renderTemplate(topFilmsElements[1], createFilmCard());
+renderTemplate(topFilmsElements[2], createFilmCard());
+renderTemplate(topFilmsElements[2], createFilmCard());
+
+const filmsStatisticsElement = document.querySelector(`.footer__statistics`);
+renderTemplate(filmsStatisticsElement, createFilmsCount());
