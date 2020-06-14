@@ -3,7 +3,7 @@ const FILMS_COUNT = 5;
 // Звание пользователя;
 const createProfile = () => {
   return (
-  `<section class="header__profile profile">
+    `<section class="header__profile profile">
     <p class="profile__rating">Movie Buff</p>
     <img class="profile__avatar" src="images/bitmap@2x.png" alt="Avatar" width="35" height="35">
   </section>`
@@ -13,7 +13,7 @@ const createProfile = () => {
 // Меню (фильтры и статистика);
 const createMenu = () => {
   return (
-  `<nav class="main-navigation">
+    `<nav class="main-navigation">
     <div class="main-navigation__items">
       <a href="#all" class="main-navigation__item main-navigation__item--active">All movies</a>
       <a href="#watchlist" class="main-navigation__item">Watchlist <span class="main-navigation__item-count">13</span></a>
@@ -28,7 +28,7 @@ const createMenu = () => {
 // Сортировка;
 const createSort = () => {
   return (
-  `<ul class="sort">
+    `<ul class="sort">
     <li><a href="#" class="sort__button sort__button--active">Sort by default</a></li>
     <li><a href="#" class="sort__button">Sort by date</a></li>
     <li><a href="#" class="sort__button">Sort by rating</a></li>
@@ -51,7 +51,7 @@ const createFilmsContainer = () => {
 // Карточка фильма;
 const createFilmCard = () => {
   return (
-  `<article class="film-card">
+    `<article class="film-card">
     <h3 class="film-card__title">The Dance of Life</h3>
     <p class="film-card__rating">8.3</p>
     <p class="film-card__info">
@@ -74,14 +74,14 @@ const createFilmCard = () => {
 // Кнопка "Show More";
 const createShowMoreButton = () => {
   return (
-  `<button class="films-list__show-more">Show more</button>`
+    `<button class="films-list__show-more">Show more</button>`
   );
 };
 
 // Раздел "Top rated" и "Most commented";
 const createTopFilmsContainer = () => {
   return (
-  `<section class="films-list--extra">
+    `<section class="films-list--extra">
     <h2 class="films-list__title">Top rated</h2>
     <div class="films-list__container"></div>
   </section>
@@ -103,7 +103,7 @@ const createFilmsCount = () => {
 // Подробная информация о фильме (попап);
 const createFilmDetails = () => {
   return (
-  `<section class="film-details">
+    `<section class="film-details">
     <form class="film-details__inner" action="" method="get">
       <div class="form-details__top-container">
         <div class="film-details__close">
