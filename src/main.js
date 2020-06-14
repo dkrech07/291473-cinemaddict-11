@@ -48,14 +48,6 @@ const createFilmsContainer = () => {
   );
 };
 
-// // Контейнер для карточек фильмов;
-// const createFilmCardsContainer = () => {
-//   return (
-//   `<div class="films-list__container"></div>`
-//   );
-// };
-
-
 // Карточка фильма;
 const createFilmCard = () => {
   return (
